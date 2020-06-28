@@ -1,0 +1,181 @@
+@import 'theme';
+@import 'typography';
+
+body {
+  font-family: 'Spectral', 'Georgia', 'Times New Roman', 'Times', serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: RobotoMono, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  color: var(--black900);
+}
+
+::selection {
+  background-color: var(--accent500);
+  color: #fff;
+}
+
+%base {
+  max-width: $max-width;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+%landmark {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+}
+
+%hyperlink {
+  border-bottom: 1px dotted var(--black900);
+  color: var(--black900);
+
+  &:hover {
+    border-color: var(--accent500);
+    color: var(--accent500);
+  }
+}
+
+header {
+  background-color: var(--white900);
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  div {
+    @extend %base;
+    @extend %landmark;
+  }
+}
+
+main {
+  height: 100%;
+  margin: 8rem auto;
+  @extend %base;
+
+  @media #{$nonDesktop} {
+    margin: 6rem auto;
+  }
+
+  a {
+    @extend %hyperlink;
+  }
+}
+
+footer {
+  background-color: var(--white900);
+  bottom: 0;
+  height: 4rem;
+  width: 100%;
+
+  div {
+    @extend %base;
+    @extend %landmark;
+  }
+
+  span {
+    font-size: 1rem;
+  }
+
+  a {
+    @extend %hyperlink;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.75px;
+  line-height: 2rem;
+  margin: 4rem 0 1.5rem;
+
+  &.PostTitle {
+    margin-bottom: 0;
+  }
+}
+
+h3 {
+  font-size: 1.1875rem;
+  letter-spacing: -0.25px;
+  line-height: 1.75rem;
+  margin: 4rem 0 1rem;
+}
+
+p {
+  font-size: 1.3125rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+blockquote {
+  $margin: 1.5rem;
+  $border: 0.25rem;
+
+  border-left: $border solid var(--black800);
+  font-style: italic;
+  margin-left: -$margin;
+  padding-left: $margin - $border;
+
+  @media #{$nonDesktop} {
+    $margin: 1rem;
+    $border: 0.1875rem;
+
+    border-left: $border solid var(--black800);
+    margin-left: -$margin;
+    padding-left: $margin - $border;
+  }
+
+  p {
+    color: var(--black800);
+  }
+}
+
+time {
+  color: var(--black800);
+  display: block;
+  font-size: 1.1875rem;
+  line-height: 1.75rem;
+  margin: 0.25rem 0 4rem;
+}
+
+a[href],
+area[href],
+button,
+summary,
+iframe,
+input,
+select,
+textarea,
+[tabindex],
+[contenteditable] {
+  &:focus {
+    color: var(--accent500);
+    outline: 1px dotted var(--accent500);
+    outline-offset: 3px;
+  }
+}
+
+[disabled],
+[tabindex='0'],
+[tabindex^='-'] {
+}
