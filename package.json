@@ -25,7 +25,7 @@
     "gatsby-theme-essentials": "https://github.com/universse/gatsby-theme-essentials",
     "mdx-utils": "0.2.0",
     "prism-react-renderer": "1.1.1",
-    "prop-types": "15.7.2",
+    "prop-types": "15.8.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
